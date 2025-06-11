@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #151515;
+  color: #e8dcca;
+  font-family: 'Georgia', serif;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 40px 20px;
+}
+
+h1 {
+  font-size: 2.6rem;
+  margin-bottom: 30px;
+  color: #d9b36c;
+  letter-spacing: 1px;
+  font-family: 'Cinzel', serif;
+  text-shadow: 2px 2px 5px #000;
+}
+
+.lock-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+}
+
+.lock {
+  background: #2b2b2b;
+  border: 2px solid #554e3a;
+  border-radius: 10px;
+  width: 120px;
+  height: 150px;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 5px rgba(0,0,0,0.5);
+  flex: 0 0 calc(33.33% - 27px);
+}
+
+.lock:hover {
+  transform: scale(1.05);
+}
+
+.key-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 10px;
+  position: relative;
+}
+
+.shackle {
+  width: 60px;
+  height: 40px;
+  border: 6px solid #877c61;
+  border-bottom: none;
+  border-radius: 30px 30px 0 0;
+  position: absolute;
+  top: -36px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.6s ease;
+}
+
+.lock.open .shackle {
+  transform: translateX(-50%) rotate(50deg) translateY(-10px);
+  border-color: #90b77d;
+}
+.info {
+  font-size: 0.8rem;
+  max-width: 250px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s;
+  font-style: italic;
+  color: #d3c5a0;
+  padding: 0 5px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.lock.open .info {
+  opacity: 1;
+}
+
+.key-icon {
+  font-size: 2rem;
+  margin-top: 50px;
+  transition: opacity 0.4s ease;
+}
+
+.lock.open .key-icon {
+  opacity: 0;
+}
+
+
+#reset-btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background: #3a3327;
+  color: #e6d8b7;
+  border: 1px solid #7c6d4e;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Georgia', serif;
+  transition: background 0.3s;
+}
+
+#reset-btn:hover {
+  background: #574a36;
+}
